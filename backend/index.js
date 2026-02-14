@@ -21,6 +21,7 @@ const io = new Server(httpServer, {
 });
 
 import sosRoutes from './routes/sosRoutes.js';
+import bloodRoutes from './routes/bloodRoutes.js';
 
 app.use(cors());
 app.use(express.json());
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/sos', sosRoutes);
+app.use('/api/blood', bloodRoutes);
 
 app.get('/', (req, res) => {
     res.send('API is running...');
